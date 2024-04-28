@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الوارد والصادر</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<body>
+    <div class="welcome-page">
+        <h1>مرحبًا بك في التطبيق</h1>
+        <div class="totals">
+            <p><i class="fas fa-arrow-down"></i> المبلغ الإجمالي الوارد: <span id="totalIncome">0</span></p>
+            <p><i class="fas fa-arrow-up"></i> المبلغ الإجمالي الصادر: <span id="totalExpense">0</span></p>
+        </div>
+        <button onclick="redirectTo('add_income.html')"><i class="fas fa-plus"></i> إضافة وارد</button>
+        <button onclick="redirectTo('view_loans.html')"><i class="fas fa-money-bill"></i> القروض</button>
+        <button onclick="redirectTo('view_past_accounts.html')"><i class="fas fa-history"></i> عرض الحسابات</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="welcome-page">
+        <h1>Welcome to the Loan App</h1>
+        <button id="totalIncomeBtn">Total Income</button>
+        <button id="incomeBtn">Income</button>
+        <button id="remainingIncomeBtn">Remaining Income</button>
+        <button id="loansPageBtn">Loans Page</button>
+    </div>
+
+    <div class="loans-page" style="display: none;">
+        <h2>Loans Page</h2>
+        <select id="employeeSelect">
+            <option value="Mustafa Dibo">Mustafa Dibo</option>
+            <option value="Mohammed Masri">Mohammed Masri</option>
+            <option value="Mohammed Khalil">Mohammed Khalil</option>
+            <option value="Mohammed Abji">Mohammed Abji</option>
+            <option value="Ammar Kaakji">Ammar Kaakji</option>
+            <option value="Abu Wahid">Abu Wahid</option>
+            <option value="Um Hassan">Um Hassan</option>
+        </select>
+        <input type="number" id="loanAmountInput" placeholder="Enter Loan Amount">
+        <button id="submitLoanBtn">Submit Loan</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الوارد والصادر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="welcome-page">
+        <h1>مرحبًا بك في التطبيق</h1>
+        <button onclick="window.location.href='add_income.html'">إضافة وارد</button>
+        <button onclick="window.location.href='view_past_accounts.html'">عرض الحسابات الماضية</button>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة وارد يومي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>إضافة وارد يومي</h2>
+    <form id="incomeForm">
+        <label for="totalAmount">المبلغ الإجمالي اليومي:</label>
+        <input type="number" id="totalAmount" name="totalAmount">
+        <label for="vegetableIncome">وارد الخضار:</label>
+        <input type="number" id="vegetableIncome" name="vegetableIncome">
+        <label for="exportIncome">صادرات اليوم:</label>
+        <div id="exportInputs">
+            <input type="number" class="exportAmount" name="exportAmount" placeholder="المبلغ">
+            <input type="text" class="exportDetails" name="exportDetails" placeholder="تفاصيل الصادر">
+        </div>
+        <button type="button" onclick="addExport()">إضافة صادر جديد</button>
+        <button type="button" onclick="calculateTotal()">حساب المبلغ الإجمالي</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
